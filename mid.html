@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+       <head>
+
+            <title>OrdeMyFood</title>
+         <style>
+            h1{
+                color:blue;
+              }
+            fieldset{
+                background-color:grey;
+
+              }
+            button{
+                 color:white;
+                 background-color:blue;
+                 boder:none;
+                 boder-radius:5px;
+                 padding:20px 30px;
+                 cursor:pointer;
+
+             } 
+            button:hover{
+                  background-color:red;
+
+            } 
+        </style>
+        <script>
+            function CalculateBill(){
+                    console.log("hi");
+                    var name=document.getElementById("Name").value;
+                    var qty=parseInt(document.getElementById("quantity").value);
+                    var food=document.getElementById("food").value;
+                    var vegi=document.getElementById("vegi").value;
+                    var Non_vegi=document.getElementById("Non-vegi").value;
+                    var price=0;
+
+                    switch(food){
+
+                         case "Burger" : 
+                                     price=qty*1000;
+                                     break;
+                         case "Pasta"  :
+                                     price=qty*1500;
+                                     break;
+                         case "Pizza"  :
+                                     price=qty*2000;
+                                     break;
+
+                                }
+                    
+                        if(Non_vegi=="Non-vegi"){
+
+                              price=price+500*qty;
+                               
+                        }
+                               
+                            
+
+
+
+
+                                       }
+
+        </script>
+
+
+
+       </head>
+
+       <body>
+            <form>
+            <fieldset style ="width:60%">
+            <h1>OrderMyFoods</h1>
+            <h4>Online Food Order Form</h4>
+            <lable for="Name">Name :</lable>
+            <input type ="text" id "Name" name="Name" requried ></br></br>
+            <lable for="Email">Email :</lable>
+            <input type ="email" id "Email" name="Email" requried ></br></br>
+            <lable for="PN">Phone Number :</lable>
+            <input type ="text" id "PN" name="PN" requried ></br></br>
+            <lable for ="food"></Lable>
+            <select id ="food" name="food">
+            <option value="Burger">Burger</option>
+            <option value="Pasta">Pasta  </option>
+            <option value="Pizza">Pizza  </option>
+            </select></br></br>
+            <lable for ="foodType">Food Type :</lable>
+            <input type ="radio" id="vegi" name="foodType" value="Vegitarian" required>Vegitarian</input>
+            <input type ="radio" id="Non-vegi" name="foodType" value="Non_vegitarian" required>Non-Vegitarian</input>
+            </br></br>
+            <lable for ="quantity">Quantity :</lable>
+            <input type ="text" id="quantity" name ="quantity"  requried>
+            </br></br>
+            <lable for ="additionalComment">Additional Comments :</lable></br>
+            <textarea  name="comment" rows="4"></textarea></br></br>
+            <button id="submit" onclick="CalculateBill()">Submit Order</button>
+
+            </fieldset>
+            </form>
+
+
+
+
+
+
+
+
+
+      </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
